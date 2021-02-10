@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>Eddie Browser Outfitters</title>
+	<meta name="robots" content="noindex,nofollow" />
+	<!-- below is a google font, go to https://www.google.com/fonts to get yours! -->
+	<link href='http://fonts.googleapis.com/css?family=Damion' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="css/default.css" />
+	<style type="text/css">
+		.masthead {
+			font-family: 'Damion', cursive;
+			/* required for google font */
+			font-size: 3em;
+		}
+
+		#logo {
+			float: right;
+			display: inline-block;
+			padding: 2px;
+			max-width: 100px;
+			/* actual size of image */
+			width: 20%;
+			/* approximate size taken on screen in maximum view */
+		}
+
+		#wear {
+			float: left;
+			display: inline-block;
+			padding: 20px;
+			max-width: 300px;
+			/* actual size of image */
+			width: 33%;
+			/* approximate size taken on screen in maximum view */
+		}
+
+		footer {
+			text-align: center;
+			clear: both;
+			/* ride below all items */
+		}
+
+		nav {
+			text-align: center;
+			/* centers the nav */
+		}
+
+		nav ul {
+			list-style: none;
+			/* removes the bullets */
+		}
+
+		nav ul li {
+			display: inline-block;
+			/* makes horizontal, but able to declare margins */
+			margin: 0 2%;
+			/* margin left-right, gets smaller as necessary */
+		}
+
+		nav a:hover {
+			text-decoration: none;
+		}
+	</style>
+
+	<!--[if ltIE9]>
+       <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+     <![endif]-->
+</head>
+
+<body>
+	<header role="banner">
+		<img src="images/four-seasons.gif" alt="Seasonal Logo Goes Here" class="flexible" id="logo" />
+		<link rel="preconnect" href="https://fonts.gstatic.com">
+		<link href="https://fonts.googleapis.com/css2?family=Pangolin&display=swap" rel="stylesheet">
+		<h1 class="masthead">Faylona Outfitters</h1>
+		<nav>
+			<ul class="seasons">
+				<li><a href="Default">Default</a></li>
+				<li><a href="Spring">Spring</a></li>
+				<li><a href="Summer">Summer</a></li>
+				<li><a href="Fall">Fall</a></li>
+				<li><a href="Winter">Winter</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main role="main">
+		<header>
+			<h3>Outfitter for All Seasons!</h3>
+		</header>
+		<!--<p>
+		<form id="dateForm">
+			<label for="dateField">
+				Input Date:<input type="text" name="dateField" id="dateField" />
+			</label>
+			<input type="submit" value="submit" />
+		</form>
+		</p>
+		<p>
+			The colors of the seasonal images are as follows:
+		<ul>
+			<li>Spring: <b>#2B7129</b></li>
+			<li>Summer: <b>#EBA52B</b></li>
+			<li>Fall: <b>#A81124</b></li>
+			<li>Winter: <b>#005393</b></li>
+		</ul>
+		</p>-->
+		<p class="paragraph">
+			We take pride here in Faylona Outfitters on showing trendy outfits for all ages. From streetwear to classic
+			styles. We cover all ages and all styles. We have everything to satisfy you! From the white sneakers, the
+			classy peacoats, the rugged denim jackets, the comfortable sherpa jackets, the slim jeans for the younger
+			demographic, the regular straight jeans for the mature demographic and more! Click the options about to take
+			a look and see how our pieces work together!
+			<img src="images/300x400.png" alt="Season Wear Goes Here" id="wear" />
+		</p>
+		<p class="paragraph">
+			Streetwear is a style of casual clothing which became global in the 1990s. It grew from New York hip hop
+			fashion and eventually California surfskate culture, to encompass elements of sportswear, punk and Japanese
+			street fashion. Eventually haute couture became an influence. It commonly centers on "casual, comfortable
+			pieces such as jeans, T-shirts, baseball caps, and sneakers", and exclusivity through intentional product
+			scarcity. Enthusiasts follow particular brands and try to obtain limited edition releases.
+		</p>
+		<p class="paragraph">
+			Classic describes your style perfectly. You prefer timeless looks, beautiful but simple cuts in clothing,
+			fine natural fabrics, and leather shoes and handbags. Tradition is important to you. You may occasionally
+			become frustrated when you can't find the exact style of a beloved item of clothing, handbag, or shoe that
+			has worn out. And you frequently keep your fashion accessories and clothing until they are worn, just
+			because much of what you buy does not go out of style. Although you won't be the flashiest person in a room,
+			you will always look good.
+		</p>
+		<p class="paragraph">
+			Business demands a tailored look, in your opinion, and so tailored has become
+			your mantra in the workplace. You don't mind wearing a suit to work. If you were notified at work that you
+			had to give a presentation to a large group in an hour, you wouldn't worry that you were dressed
+			inappropriately. You tend to dress a bit more formally than your co-workers.
+		</p>
+	</main>
+	<footer>
+		<small>&copy; 2013, All Rights Reserved ~
+			<a href="http://validator.w3.org/check/referer" target="_blank">Valid HTML</a> ~
+			<a href="http://jigsaw.w3.org/css-validator/check?uri=referer" target="_blank">Valid CSS</a>
+		</small>
+	</footer>
+	<!-- END Footer -->
+	<script src="http://code.jquery.com/jquery-latest.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		$("document").ready(function () {
+			$('.seasons a').click(function (e) {//find all a tags inside class of seasons
+				e.preventDefault();//stop default submission
+				let season = $(this).attr("href");//contents of href attribute of this element
+				//alert(season);
+				//convert to lower case to see more easily
+				season = season.toLowerCase();
+
+				switch (season) {
+					case 'spring':
+						alert("Spring!");
+						$("#logo").attr("src", "images/spring.gif");
+						$("#wear").attr("src", "images/spring-wear1.jpg");
+						$("html").css("background-color", "#2B7129");
+						$(".paragraph").css("color", "#2B7129");
+						$("main header h3").html("Get a Jump on Spring Wear!");
+						break;
+
+					case 'summer':
+						alert("Summer!");
+						$("#logo").attr("src", "images/summer.gif");
+						$("#wear").attr("src", "images/summer-wear1.jpg");
+						$("html").css("background-color", "#EBA52B");
+						$(".paragraph").css("color", "#EBA52B");
+						$("main header h3").html("Outmatch Summer With Your Own Hot Outfit!");
+						break;
+
+					case 'fall':
+						alert("Fall!");
+						$("#logo").attr("src", "images/fall.gif");
+						$("#wear").attr("src", "images/fall-wear1.jpg");
+						$("html").css("background-color", "#A81124");
+						$(".paragraph").css("color", "#A81124");
+						$("main header h3").html("Let The Leaves Fall For You With This Outfit!");
+						break;
+
+					case 'winter':
+						alert("Winter!");
+						$("#logo").attr("src", "images/winter.gif");
+						$("#wear").attr("src", "images/winter-wear1.jpg");
+						$("html").css("background-color", "#005393");
+						$(".paragraph").css("color", "#005393");
+						$("main header h3").html("Wear Peacoats To Stay Cooler Than Winter!");
+
+						break;
+
+					default:
+						alert("Yay Default!");
+						$("#logo").attr("src", "images/four-seasons.gif");
+						$("#wear").attr("src", "images/300x400.png");
+				}
+			});
+			/*$('#dateForm').submit(function (e) {//handle form submission event
+				e.preventDefault();//stop default submission
+				var datetext = $('input[name=dateField]').val();//grab data from textbox
+				var formDate = new Date(datetext);//create a date from form input
+				var today = new Date();
+
+				if (formDate > today) {
+					alert(datetext + " is in the future!");
+				} else {
+					alert(datetext + " is in the past!");
+				}
+				switch (formDate) {
+					case 'mar':
+					case 'march':
+					case '3':
+					case 'apr':
+					case 'april':
+					case '4':
+					case 'may':
+					case '5':
+						season = 'spring';
+				}
+
+			});*/
+		});
+	</script>
+
+</body>
+
+</html>

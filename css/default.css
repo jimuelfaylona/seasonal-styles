@@ -17,12 +17,16 @@ img.flexible {
 	max-width:300px; /* actual size of image */
 	width:33%; /* approximate size taken on screen in maximum view */
 }
-p {margin:10px;}
+p {margin:10px;
+	font-family: 'Pangolin', cursive;}
 h1,h2,h3,h4,h5,h6{
 	font-weight:normal;
 	margin:10px;
+	font-family: 'Pangolin', cursive;
 	}
-h1.masthead {margin-top:0;}
+h1.masthead {margin-top:0;
+	margin-bottom: 20px;
+font-size: 3.5em;}
 footer {
 	text-align:center;
 	clear:both; /* ride below all items */
@@ -42,3 +46,7 @@ nav ul li
 nav a:hover{
 	text-decoration: none;
 }	
+h3{
+	margin-top: 20px;
+	font-size: 2.0em;
+}
